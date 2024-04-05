@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tech News",
+  title: "The Whisper",
   description: "Breaking news in the world of tech",
 };
 
