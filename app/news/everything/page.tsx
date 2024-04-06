@@ -1,16 +1,23 @@
 import React from 'react'
 import axios from 'axios'
 import Articles from '@/components/Articles'
+import EveryThingSearch from '@/components/EveryThingSearch'
 
 interface Proptypes {
   searchParams: {
-    query: string
+    q: string,
+    sources: string
   }
 }
 
-async function getData(query: string) {
+
+async function getData(q: string, sources: string) {
+  let url = `https://newsapi.org/v2/everything?q=${q}&apiKey=${process.env.API_KEY}`
+  if (sources) {
+    url = `https://newsapi.org/v2/everything?q=${q}&category=${sources}&apiKey=${process.env.API_KEY}`
+  }
   try {
-    const res = await axios(`https://newsapi.org/v2/everything?q=tech&apiKey=${process.env.API_KEY}`)
+    const res = await axios(url)
     const result = res.data.articles
     const data = result.filter((item: any) => item.source.name != '[Removed]')
     return data
@@ -20,10 +27,11 @@ async function getData(query: string) {
 }
 
 export default async function page({ searchParams }: Proptypes) {
-  const query = searchParams?.query || ''
-  const data = await getData(query)
+  console.log(searchParams.q, searchParams.sources)
+  const data = await getData(searchParams.q, searchParams.sources)
   return (
     <div>
+      <EveryThingSearch />
       <Articles data={data} />
     </div>
   )

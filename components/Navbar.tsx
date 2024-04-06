@@ -18,7 +18,7 @@ const navLinks: LinksType[] = [
     name: 'Home'
   },
   {
-    path: '/news/top-headlines',
+    path: '/news/top-headlines?country=ng',
     name: 'News'
   },
   {

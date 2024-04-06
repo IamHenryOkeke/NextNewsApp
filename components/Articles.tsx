@@ -30,7 +30,7 @@ export default function Articles({ data }: ArticlesProp) {
 
   return (
     <>
-      <div className='flex flex-col gap-4 lg:mx-52'>
+      <div className='flex flex-col gap-4'>
         {currentItems.map((item, index) => {
           return (
             <ArticleCard
