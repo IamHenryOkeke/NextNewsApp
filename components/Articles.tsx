@@ -3,13 +3,12 @@ import React from 'react'
 import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from "react"
 import ArticleCard from '@/components/ArticleCard';
-import { NewsProp } from '@/components/ArticleCard';
-
-interface ArticlesProp {
-  data: NewsProp[],
-}
+import { ArticlesProp, NewsProp } from '@/types/types';
+import { useStore } from '@/store';
 
 export default function Articles({ data }: ArticlesProp) {
+  const setData = useStore((state) => state.setData)
+  const data2 = useStore((state) => state.data)
   const [currentItems, setCurrentItems] = useState<NewsProp[]>([]);
   const [itemOffset, setItemOffset] = useState<number>(0);
   const [pageCount, setPageCount] = useState<number>(0);
@@ -17,6 +16,7 @@ export default function Articles({ data }: ArticlesProp) {
   const itemsPerPage = 10
 
   useEffect(() => {
+    setData(data)
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset))
     setPageCount(Math.ceil(data.length / itemsPerPage))

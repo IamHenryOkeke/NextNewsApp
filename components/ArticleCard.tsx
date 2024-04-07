@@ -1,18 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
-export interface NewsProp {
-  author: string,
-  description: string,
-  publishedAt: string,
-  source: {
-    id: string,
-    name: string
-  },
-  title: string,
-  url: string,
-  urlToImage: string
-}
+import { NewsProp } from '@/types/types'
 
 export default function ArticleCard({ author, description, publishedAt, title, url, urlToImage, source }: NewsProp) {
   return (

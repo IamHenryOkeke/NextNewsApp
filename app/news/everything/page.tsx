@@ -2,14 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Articles from '@/components/Articles'
 import EveryThingSearch from '@/components/EveryThingSearch'
-
-interface Proptypes {
-  searchParams: {
-    q: string,
-    sources: string
-  }
-}
-
+import { EverythingSearchParamsProptypes } from '@/types/types'
 
 async function getData(q: string, sources: string) {
   let url = `https://newsapi.org/v2/everything?q=${q}&apiKey=${process.env.API_KEY}`
@@ -26,8 +19,7 @@ async function getData(q: string, sources: string) {
   }
 }
 
-export default async function page({ searchParams }: Proptypes) {
-  console.log(searchParams.q, searchParams.sources)
+export default async function page({ searchParams }: EverythingSearchParamsProptypes) {
   const data = await getData(searchParams.q, searchParams.sources)
   return (
     <div>

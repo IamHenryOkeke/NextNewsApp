@@ -6,11 +6,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { MdClose } from 'react-icons/md'
 import Image from 'next/image';
 import Logo from '../app/assets/writedotas.svg'
-
-interface LinksType {
-  path: string,
-  name: string
-}
+import { LinksType } from '@/types/types';
 
 const navLinks: LinksType[] = [
   {

@@ -2,13 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Articles from '@/components/Articles'
 import TopHeadlinSearch from '@/components/TopHeadlinSearch'
-
-interface Proptypes {
-  searchParams: {
-    country: string,
-    category: string
-  }
-}
+import { TopHeadlinesSearchParamsProptypes } from '@/types/types'
 
 async function getData(country: string, category: string) {
   let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${process.env.API_KEY}`
@@ -25,8 +19,7 @@ async function getData(country: string, category: string) {
   }
 }
 
-export default async function page({ searchParams }: Proptypes) {
-  console.log(searchParams.category, searchParams.country)
+export default async function page({ searchParams }: TopHeadlinesSearchParamsProptypes) {
   const data = await getData(searchParams.country, searchParams.category)
   return (
     <div>

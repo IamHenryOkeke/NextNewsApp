@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import NewsNavBar from '@/components/NewsNavBar'
-import Loading from '../loading'
+import Loading from './loading'
 
 export default function NewsLayout({ children, }: { children: React.ReactNode }) {
   return (

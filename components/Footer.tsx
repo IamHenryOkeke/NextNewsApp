@@ -2,11 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
 import Logo from '../app/assets/writedotas.svg'
-
-interface LinksType {
-  path: string,
-  name: string
-}
+import { LinksType } from '@/types/types';
 
 const footerLinks: LinksType[] = [
   {
