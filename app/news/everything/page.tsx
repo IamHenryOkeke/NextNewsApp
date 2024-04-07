@@ -13,7 +13,8 @@ async function getData(q: string, sources: string) {
     const res = await axios(url)
     const result = res.data.articles
     const data = result.filter((item: any) => item.source.name != '[Removed]')
-    return data
+    const newData = data.map((item: any, i: any) => ({ ...item, id: i }))
+    return newData
   } catch (error) {
     throw new Error("Resource not found")
   }
