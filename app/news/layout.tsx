@@ -1,14 +1,13 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import NewsNavBar from '@/components/NewsNavBar'
-import Loading from './loading'
+import PreviousPageButton from '@/components/PreviousPageButton'
 
-export default function NewsLayout({ children, }: { children: React.ReactNode }) {
+export default function NewsLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className='lg:mx-52 py-5 px-4 md:px-10 lg:px-52'>
-      <NewsNavBar/>
-      <Suspense fallback={<Loading/>}>
-        <section>{children}</section>
-      </Suspense>
+      <PreviousPageButton />
+      <NewsNavBar />
+      {children}
     </main>
   )
 }

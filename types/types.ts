@@ -13,6 +13,7 @@ export interface EverythingSearchParamsProptypes {
 }
 
 export interface NewsProp {
+  id: string,
   author: string,
   description: string,
   publishedAt: string,

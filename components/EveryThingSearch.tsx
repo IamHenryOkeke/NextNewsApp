@@ -21,16 +21,14 @@ export default function EveryThingSearch() {
   }, 300)
 
   return (
-    <div className='my-3 flex justify-between'>
-      <div className='relative w-1/2 lg:w-1/5'>
-        <input
-          type="text"
-          onChange={(e) => {
-            handleInputSearch(e.target.value)
-          }}
-          defaultValue={searchParams.get('q')?.toString()} placeholder='Search.....' className='h-10 lg:h-12 w-full pl-7 pr-2 lg:px-10 text-justify text-slate-500 lg:text-lg font-medium focus:outline-none border border-slate-500 rounded-xl'
-        />
-      </div>
+    <div className='my-3 w-full md:w-1/2'>
+      <input
+        type="text"
+        onChange={(e) => {
+          handleInputSearch(e.target.value)
+        }}
+        defaultValue={searchParams.get('q')?.toString()} placeholder='Search related article e.g Tech .....' className='w-full px-5 py-3 text-justify lg:text-lg font-medium focus:outline-none border border-slate-500 rounded-xl'
+      />
     </div>
   )
 }

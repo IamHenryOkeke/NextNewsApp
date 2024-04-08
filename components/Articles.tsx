@@ -35,6 +35,7 @@ export default function Articles({ data }: ArticlesProp) {
           return (
             <ArticleCard
               key={index}
+              id={item.id}
               author={item.author}
               description={item.description}
               publishedAt={item.publishedAt}
