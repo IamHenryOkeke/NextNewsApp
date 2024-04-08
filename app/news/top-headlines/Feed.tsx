@@ -1,5 +1,5 @@
 import React from 'react'
-import { getData, getTopHeadlinesData } from '@/api/api'
+import { getTopHeadlinesData } from '@/api/api'
 import Articles from '@/components/Articles'
 import { TopHeadlinesSearchParamsProptypes } from '@/types/types'
 
