@@ -12,7 +12,6 @@ interface PropTypes {
 export default function Page({ params }: PropTypes) {
   const data = useStore((state) => state.data)
   const newsItem = data.find((item) => item.id == params.slug)
-  console.log(newsItem)
   return (
     <NewsDetail newsItem={newsItem}/>
   )
