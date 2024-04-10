@@ -15,7 +15,7 @@ export default function Hero() {
       <Image src={HeroImage} alt='Hero Image' className='w-full lg:w-fit'/>
       <div className='md:mt-20'>
         <h2 className={`${merriweather.className} text-3xl md:text-7xl font-bold mb-3`}>Get latest news updates</h2>
-        <p className='md:text-xl'>Keep on top of popular news and videos from across the country, regularly updated throughout the day</p>
+        <p className='md:text-xl'>Keep on top of popular news and videos from across the country and the world, regularly updated throughout the day</p>
       </div>
     </div>
   )
