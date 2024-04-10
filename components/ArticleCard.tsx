@@ -5,8 +5,6 @@ import { usePathname } from 'next/navigation'
 
 export default function ArticleCard({ id, author, description, publishedAt, title, url, urlToImage, source }: NewsProp) {
   const pathName = usePathname()
-  console.log(id)
-  console.log(pathName)
   return (
     <div className="flex flex-col gap-3 p-4 text-[14px] md:text-base lg:text-lg bg-slate-200 border border-[#ceb9bf] rounded-md">
       <Link href={`${pathName}/${id}`} className='text-xl md:text-2xl lg:text-3xl hover:text-blue-600 font-bold' >{title}</Link>
