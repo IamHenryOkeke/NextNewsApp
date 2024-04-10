@@ -18,11 +18,11 @@ const navLinks: LinksType[] = [
     name: 'News'
   },
   {
-    path: '/about',
+    path: '/about-us',
     name: 'About'
   },
   {
-    path: '/contact',
+    path: '/contact-us',
     name: 'Contact'
   }
 ]
@@ -35,7 +35,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className='py-5 lg:py-8  px-4 md:px-10 lg:px-40 flex justify-between items-center'>
+    <nav className='py-5 lg:py-8 px-4 md:px-10 lg:px-40 shadow-[0_2px_2px_0px_rgba(19,32,66,0.20)] flex justify-between items-center'>
       <Link href="/" className='flex items-center gap-2'>
         <Image src={Logo} alt='Logo' className='h-10 w-fit'/>
         <h2 className='font-bold text-xl mt-2'>
